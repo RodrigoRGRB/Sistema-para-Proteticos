@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Serviços</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+</head>
+<body class="container">
+
+    <h6 class="text-center">Serviços</h6>
+    <div id="mensagem"></div>
+    <form class="form" onsubmit="servicosController.adiciona(event)">
+
+        <!-- <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" class="form-control" required autofocus/>
+        </div> -->
+
+        <div class="form-group">
+            <label for="servico">Serviços</label>
+            <input type="text" id="servico" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="valor">Valor</label>
+            <input id="valor" type="number" class="form-control"  min="0.01" step="0.01" value="0.0" required />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Incluir</button>
+    </form>
+
+    <br>
+    <br>
+    <div id="servicosView"></div>
+    
+        <script src="js/app/models/Servicos.js"></script>
+        <script src="js/app/controllers/ServicosController.js"></script>
+        <script src="js/app/models/ListaServicos.js"></script>
+        <script src="js/app/views/ServicosView.js"></script>
+        <script>
+            let servicosController = new ServicosController();
+        </script>
+</body>
+</html>
