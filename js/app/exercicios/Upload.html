@@ -1,0 +1,41 @@
+<input type="file" onchange="previewFile()"><br>
+<div id="pokemonView"></div>
+
+<script>
+    var pokemon = [];
+    var pokemonView = document.querySelector('#pokemonView');
+
+    function previewFile(){
+        
+    //    var preview = document.querySelector('img'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       console.log(file);
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+           pokemon.push(reader.result);
+           console.log(pokemon);
+           updateView(pokemon);
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+           
+       } else {
+           //preview.src = "";
+       }
+
+       
+    
+
+
+       
+  }
+  
+  function updateView(model){    
+        pokemonView.innerHTML= pokemon.map(n => `<img src="${n}" height="200">`).join('');
+    }   
+
+  previewFile();  //calls the function named previewFile()s
+  
+</script>

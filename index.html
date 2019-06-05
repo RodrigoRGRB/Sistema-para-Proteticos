@@ -34,13 +34,60 @@
     <br>
     <br>
     <div id="servicosView"></div>
-    
+
+    <h6 class="text-center">Dentistas</h6>
+    <div id="mensagem"></div>
+    <form class="form" onsubmit="dentistaController.adiciona(event)">
+
+        <div class="form-group">
+            <label for="nome">Nome Dentistas</label>
+            <input type="text" id="nome" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" type="number" class="form-control"  required />
+        </div>
+
+        <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" class="form-control"  required />
+        </div>
+
+        <div class="form-group">
+                <label for="endereco">Endereco</label>
+                <input id="endereco" class="form-control"  required />
+        </div>
+
+        <div class="form-group">
+                <label for="foto">Endereco</label>
+                <input id="foto" type="file" class="form-control"  required />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Incluir</button>
+    </form>
+
+    <br>
+    <br>
+    <div id="servicosView"></div>
+
+
+
+
+
         <script src="js/app/models/Servicos.js"></script>
         <script src="js/app/controllers/ServicosController.js"></script>
         <script src="js/app/models/ListaServicos.js"></script>
         <script src="js/app/views/ServicosView.js"></script>
+
+
+        <script src="js/app/models/Dentistas.js"></script>
+        <script src="js/app/models/ListaDentistas.js"></script>
+        <script src="js/app/controllers/DentistasController.js"></script>
+
         <script>
             let servicosController = new ServicosController();
+            let dentistaController = new DentistasController();
         </script>
 </body>
 </html>
