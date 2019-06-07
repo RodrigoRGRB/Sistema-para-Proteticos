@@ -7,8 +7,9 @@ class DentistasController{
         this._inputTelefone = $("#telefone");
         this._inputEmail = $("#email");
         this._inputEndereco = $("#endereco");
-        this._inputFoto = $("#foto");
-
+        this._inputFoto = $("#armazenaFoto");
+        
+        
 
         this._listaDentistas = new ListaDentistas();
 
@@ -19,8 +20,13 @@ class DentistasController{
     adiciona(event){
         event.preventDefault();
         
+        
         this._listaDentistas.adiciona(this._criaDentista())
         console.log(this._listaDentistas);
+
+        this._dentistaView.update(this._listaDentistas);
+
+       
     }
 
     _criaDentista(){
@@ -32,4 +38,5 @@ class DentistasController{
             this._inputFoto.value
         );
     }
+
 }

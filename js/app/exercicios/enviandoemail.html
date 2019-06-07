@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="viewEtapa"></div>
+    <div id="viewSetor"></div>
+    Caminho do arquivo<input id="caminho"></div><br>
+    Caminho do especialista<input id="caminhoEsp"></div><br>
+    <button id="enviar">Enviar</button>
+
+<script>
+    etapas = ["12.Diagramação P0",
+    "14.Emendas P0",
+    "17.Diagramação P1",
+    "19.Diagramação P2",
+    "22.Diagramação P3",
+    "24.Diagramação Prova final",
+    "27.Diagramação-Emendas finais",
+    "29.Aprovação final para unificação",
+    "Etapa extra-Diagramação",
+    "30.Diagramação-unificação",
+    "32.Diagramação-inserção de página de créditos",
+    "34.Diagramação-Emendas PDF Livro",
+    "37.Diagramação-Liberação do arquivo para gráfica",
+    "42.Aprovação de plotter",
+    "43.Material Digital",
+    "Etapa extra-Diagramação-Livro"]
+
+    setor = ["Autor",
+    "Leitor Crítico",
+    "Licenciamento",
+    "Edição especialista",
+    "Edição de texto",
+    "Diagramação",
+    "Ilustração",
+    "Revisão",
+    "Coordenação",
+    "Direção",
+    "PCP"]
+    
+    viewEtapa = `
+    <select id="viewEtapaS">
+    ${etapas.map(n => 
+        `
+        <option value="${n}">${n}</option>
+        `    
+    )}
+    </select>
+    `
+
+    viewSetor = `
+    <select id="viewSetorS">
+    ${setor.map(n => 
+        `
+        <option value="${n}">${n}</option>
+        `    
+    )}
+    </select>
+    `
+    document.querySelector("#viewEtapa").innerHTML = viewEtapa;
+    document.querySelector("#viewSetor").innerHTML = viewSetor;
+    $ = document.querySelector.bind(document);
+
+    espaco = "%0D%0A";
+
+    
+    
+
+        
+    // Função para adicionar uma espera de evento em t
+    
+    el = $("#enviar");
+    el.addEventListener("click", function(){
+        //window.open('mailto:test@example.com?subject=subject&body='+teste);
+        
+        teste = `Etapa: ${$("#viewEtapaS").value}
+Setor: ${$("#viewSetorS").value}
+Caminho: ${$("#caminho").value}
+    `
+    
+    assunto = `Liberado para ${$("#viewSetorS").value} PV_Coleção_Disciplina _frente_ cap - ${$("#viewEtapaS").value}`;
+    
+
+
+        sendMail();
+    }, false); 
+    
+    function sendMail()
+        {
+            var yourMessage = teste;
+            var subject = assunto;
+            document.location.href = "mailto:teste@gmail.com?subject="
+                + encodeURIComponent(subject)
+                + "&body=" + encodeURIComponent(yourMessage);
+        }
+
+</script>
+</body>
+
+</html>

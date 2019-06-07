@@ -12,6 +12,7 @@ class DentistasView{
                     <th>DENTISTA</th>
                     <th>TELEFONE</th>
                     <th>EMAIL</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
 
@@ -19,7 +20,7 @@ class DentistasView{
               ${model.dentistas.map(n =>
                 `
                 <tr>
-                    <td>${n.foto}</td>
+                    <td><img src="${n.foto}" class="cropcircle"></td>
                     <td>${n.nome}</td>
                     <td>${n.telefone}</td>
                     <td>${n.email}</td>
