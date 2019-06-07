@@ -9,8 +9,11 @@ class DentistasController{
         this._inputEndereco = $("#endereco");
         this._inputFoto = $("#foto");
 
+
         this._listaDentistas = new ListaDentistas();
 
+        this._dentistaView = new DentistasView($("#dentistaView"));
+        this._dentistaView.update(this._listaDentistas);
     }
 
     adiciona(event){
