@@ -38,6 +38,8 @@
 
     <h6 class="text-center">Dentistas</h6>
     <div id="mensagem"></div>
+
+    
     <form class="form" onsubmit="dentistaController.adiciona(event)">
 
         <div class="form-group">
@@ -74,7 +76,58 @@
 
     <br>
     <br>
+    <div class="form-group">
+            <label for="buscaDentista">Buscar dentista</label>
+            <input type="text" id="buscaDentista" class="form-control" oninput="dentistaController.busca()" required/>
+        </div>
     <div id="dentistaView"></div>
+
+
+    <form class="form" onsubmit="notasController.adiciona(event)">
+
+            <div class="form-group">
+                <label for="nomePaciente">Nome Paciente</label>
+                <input type="text" id="nomePaciente" class="form-control" required/>
+            </div>
+    
+            <div class="form-group">
+                <label for="telefone">Serviços</label>
+                <input list="servicos" name="servicos" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" class="form-control"  required />
+            </div>
+    
+            <div class="form-group">
+                    <label for="endereco">Endereco</label>
+                    <input id="endereco" class="form-control"  required />
+            </div>
+    
+            <div class="form-group">
+                    <label for="foto">FOTO</label>
+                    <input id="foto" type="file" class="form-control"  onchange="FotoHelper.pegaFoto()" required  />
+            </div>
+    
+            <div class="form-group">
+                    <input id="armazenaFoto" type="hidden" class="form-control" value="" required  />
+            </div>
+    
+            <button class="btn btn-primary" type="submit">Incluir</button>
+        </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Previsualização da nota</h2>
+    Dentista:<div id="nomeDentista"></div>--------------- 
+    <br>
+    Nome Paciente<span id="nomePaciente"></span>--------------- Data:<div id="data"></div><br>
+    <div id="servicosNotaView"></div>
+
+
+
 
 
 
@@ -91,9 +144,17 @@
         <script src="js/app/controllers/DentistasController.js"></script>
         <script src="js/app/views/DentistasView.js"></script>
 
+        <script src="js/app/models/Notas.js"></script>
+        <script src="js/app/models/ListaNotas.js"></script>
+        <script src="js/app/controllers/NotasController.js"></script>
+        <script src="js/app/views/DentistaView.js"></script>
+
+
+
         <script>
             let servicosController = new ServicosController();
             let dentistaController = new DentistasController();
+            let notasController = new notasController();
             
               
         </script>

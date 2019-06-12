@@ -19,9 +19,9 @@ class DentistasView{
             <tbody>
               ${model.dentistas.map(n =>
                 `
-                <tr>
+                <tr class="dentista">
                     <td><img src="${n.foto}" class="cropcircle"></td>
-                    <td>${n.nome}</td>
+                    <td class="info-nome">${n.nome}</td>
                     <td>${n.telefone}</td>
                     <td>${n.email}</td>
                     <td>Editar / Excluir</td>
