@@ -85,35 +85,43 @@
 
     <form class="form" onsubmit="notasController.adiciona(event)">
 
+
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" class="form-control" required autofocus/>
+        </div>
+
             <div class="form-group">
                 <label for="nomePaciente">Nome Paciente</label>
                 <input type="text" id="nomePaciente" class="form-control" required/>
             </div>
-    
+
             <div class="form-group">
-                <label for="telefone">Serviços</label>
-                <input list="servicos" name="servicos" class="form-control">
+                <label for="nomeDentista">Nome Dentista</label>
+                <input type="text" id="nomeDentista" class="form-control" required/>
             </div>
     
             <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" class="form-control"  required />
+                <label for="servicos">Serviços</label>
+                <span id="listaServicosView"></span>
             </div>
     
             <div class="form-group">
-                    <label for="endereco">Endereco</label>
-                    <input id="endereco" class="form-control"  required />
+                    <label for="quantidade">Quantidade</label>
+                    <input id="quantidade" class="form-control"  required />
             </div>
     
             <div class="form-group">
-                    <label for="foto">FOTO</label>
-                    <input id="foto" type="file" class="form-control"  onchange="FotoHelper.pegaFoto()" required  />
+                    <label for="valor">Valor</label>
+                    <input id="valor" class="form-control"  required />
             </div>
-    
+
             <div class="form-group">
-                    <input id="armazenaFoto" type="hidden" class="form-control" value="" required  />
-            </div>
+                <label for="desconto">Desconto</label>
+                <input id="desconto" class="form-control"  required />
+        </div>
     
+        
             <button class="btn btn-primary" type="submit">Incluir</button>
         </form>
     <br>
@@ -147,14 +155,14 @@
         <script src="js/app/models/Notas.js"></script>
         <script src="js/app/models/ListaNotas.js"></script>
         <script src="js/app/controllers/NotasController.js"></script>
-        <script src="js/app/views/DentistaView.js"></script>
+        <script src="js/app/views/notasView.js"></script>
 
 
 
         <script>
             let servicosController = new ServicosController();
             let dentistaController = new DentistasController();
-            let notasController = new notasController();
+            let notasController = new NotasController();
             
               
         </script>

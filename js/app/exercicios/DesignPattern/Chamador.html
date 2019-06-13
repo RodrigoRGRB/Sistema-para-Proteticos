@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="ConstructorPattern.js"></script>
+    <script src="FactoryPattern.js"></script>
+    <script src="SingletonPattern.js"></script>
+    <script src="CompositePattern.js"></script>
+    <script src="DecoratorPattern.js"></script>
+    <script>
+        //Constructor pattern
+        const ironMan = new Hero('Iron Man', 'Fly');
+        console.log(ironMan.getDetails());    
+
+        //Factory pattern
+        const factory = new BallFactory();
+
+        const myFootball = factory.createBall('football');
+        const myBasketball = factory.createBall('basketball');
+
+        console.log(myFootball.roll()); // The football is rolling.
+        console.log(myBasketball.roll()); // The basketball is rolling.
+        console.log(myFootball.kick()); // You kicked the football.
+        console.log(myBasketball.bounce()); // You bounced the basketball.
+
+        //Singleton Pattern
+        const mongo = new Database('mongo');
+        console.log(mongo.getData()); // mongo
+
+        const mysql = new Database('mysql');
+        console.log(mysql.getData()); // mongo
+
+        //DecoratorPattern
+        const alchemist = giftWrap(new Book('The alchimist', 'Paulo coelho', 10));
+        console.log(alchemist.isGiftWrapped);
+        console.log(alchemist.unwrap());
+
+        const inferno = hardbindbook(new Book('Inferno', 'Dan Brown', 15));
+        console.log(inferno.isHardBound);
+        console.log(inferno.price);
+
+        
+    </script>
+</body>
+</html>

@@ -6,6 +6,7 @@ class NotasView{
 
     _template(model){
         return `
+        <input list="servicos" name="servicos" class="form-control">
         <datalist id="servicos">
                ${model.servicos.map(n =>
                    `
@@ -17,7 +18,7 @@ class NotasView{
  
     }
 
-    _update(model){
+    update(model){
         this._elemento.innerHTML = this._template(model);
     }
 
