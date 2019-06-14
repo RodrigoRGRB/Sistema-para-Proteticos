@@ -19,7 +19,7 @@ class ServicosController{
         this._listaServicos.adiciona(this._criaServico());
 
         this._servicosView.update(this._listaServicos);
-        
+        notasController.servicosOnFocus()
         this._limpaFormulario();
 
 

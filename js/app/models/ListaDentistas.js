@@ -1,7 +1,15 @@
 class ListaDentistas{
 
     constructor(){
+        if(ListaDentistas.exist){
+            return ListaDentistas.instance;
+        }
+                
         this._listaDentista = [];
+        ListaDentistas.instance = this;
+        ListaDentistas.exist = true;
+        return this;
+        
     }
 
     adiciona(dentista){
@@ -11,5 +19,6 @@ class ListaDentistas{
     get dentistas(){
         return [].concat(this._listaDentista);
     }
+
 
 }

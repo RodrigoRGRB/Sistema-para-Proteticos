@@ -88,7 +88,7 @@
 
         <div class="form-group">
             <label for="data">Data</label>
-            <input type="date" id="data" class="form-control" required autofocus/>
+            <input type="date" id="data" class="form-control" required/>
         </div>
 
             <div class="form-group">
@@ -98,31 +98,31 @@
 
             <div class="form-group">
                 <label for="nomeDentista">Nome Dentista</label>
-                <input type="text" id="nomeDentista" class="form-control" required/>
+                <span id="listaDentistaView"></span>
             </div>
-    
+    <hr>
             <div class="form-group">
-                <label for="servicos">Serviços</label>
+                <label for="servico">Serviços</label>
                 <span id="listaServicosView"></span>
-            </div>
-    
-            <div class="form-group">
-                    <label for="quantidade">Quantidade</label>
-                    <input id="quantidade" class="form-control"  required />
-            </div>
-    
-            <div class="form-group">
-                    <label for="valor">Valor</label>
-                    <input id="valor" class="form-control"  required />
             </div>
 
             <div class="form-group">
-                <label for="desconto">Desconto</label>
-                <input id="desconto" class="form-control"  required />
+                    <label for="quantidadeServicoView">Quantidade</label>
+                    <input id="quantidadeServicoView" class="form-control"  required />
+            </div>
+    
+            <div class="form-group">
+                    <label for="valorServicoView">Valor</label>
+                    <input id="valorServicoView" class="form-control"  required />
+            </div>
+
+            <div class="form-group">
+                <label for="descontoServicoView">Desconto</label>
+                <input id="descontoServicoView" class="form-control"  required />
         </div>
     
         
-            <button class="btn btn-primary" type="submit">Incluir</button>
+            <button class="btn btn-primary" type="submit" onclick="notasController.montaNota()">Incluir</button>
         </form>
     <br>
     <br>
@@ -155,7 +155,8 @@
         <script src="js/app/models/Notas.js"></script>
         <script src="js/app/models/ListaNotas.js"></script>
         <script src="js/app/controllers/NotasController.js"></script>
-        <script src="js/app/views/notasView.js"></script>
+        <script src="js/app/views/ListaServicosView.js"></script>
+        <script src="js/app/views/ListaDentistaView.js"></script>
 
 
 

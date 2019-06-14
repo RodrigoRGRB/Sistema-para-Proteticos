@@ -27,6 +27,7 @@ class DentistasController{
         console.log(this._listaDentistas);
 
         this._dentistaView.update(this._listaDentistas);
+        notasController.dentistasOnFocus()
 
        
     }
